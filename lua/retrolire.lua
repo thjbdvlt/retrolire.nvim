@@ -17,7 +17,7 @@ function RetroCite(args)
     --
     -- if args == nil then args = '' end
     if args == nil then args = {args = ''} end
-    local cmd = "retrolire cite -o " .. args.args
+    local cmd = "retrolire cite -O " .. args.args
     coroutine.wrap(
         function()
             local fzf = require('fzf')
@@ -37,7 +37,7 @@ function RetroQuote(args)
     -- edit a file selected with fzf.
     --
     if args == nil then args = {args = ''} end
-    local cmd = "retrolire quote -o " .. args.args
+    local cmd = "retrolire quote -O " .. args.args
     local fzf_opts = fzf_base_opts ..
         [[ --preview='retrolire _head {2}']] ..
         [[ --preview-window='bottom,5' ]] ..
